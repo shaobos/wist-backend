@@ -8,7 +8,7 @@ import com.linkedin.restli.server.annotations.RestMethod;
 import com.linkedin.restli.server.resources.CollectionResourceTemplate;
 import org.ssb.wist.Word;
 
-@RestLiCollection(name = "word", namespace = "org.example.fortunes")
+@RestLiCollection(name = "word", namespace = "org.ssb.wist")
 public class WordResource extends CollectionResourceTemplate<String, Word> {
 
   @RestMethod.Update

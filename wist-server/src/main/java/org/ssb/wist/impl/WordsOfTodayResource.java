@@ -13,7 +13,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
-@RestLiCollection(name = "wordsOfToday", namespace = "org.example.fortunes")
+@RestLiCollection(name = "wordsOfToday", namespace = "org.ssb.wist")
 public class WordsOfTodayResource extends CollectionResourceTemplate<Long, WordsOfToday> {
 
 
