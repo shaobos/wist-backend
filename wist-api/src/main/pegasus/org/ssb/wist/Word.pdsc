@@ -1,0 +1,7 @@
+{
+  "type": "record",
+  "name": "Word",
+  "namespace": "org.example.fortunes",
+  "doc": "Word data schema",
+  "fields": []
+}
