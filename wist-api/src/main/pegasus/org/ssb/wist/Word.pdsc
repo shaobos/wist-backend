@@ -1,7 +1,7 @@
 {
   "type": "record",
   "name": "Word",
-  "namespace": "org.example.fortunes",
+  "namespace": "org.ssb.wist",
   "doc": "Word data schema",
   "fields": []
 }

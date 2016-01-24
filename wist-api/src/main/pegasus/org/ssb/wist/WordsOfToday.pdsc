@@ -1,7 +1,7 @@
 {
   "type": "record",
   "name": "WordsOfToday",
-  "namespace": "org.example.fortunes",
+  "namespace": "org.ssb.wist",
   "doc": "Fortune data schema",
   "fields": [
     {
