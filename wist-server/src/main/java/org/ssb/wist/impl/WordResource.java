@@ -6,7 +6,7 @@ import com.linkedin.restli.server.UpdateResponse;
 import com.linkedin.restli.server.annotations.RestLiCollection;
 import com.linkedin.restli.server.annotations.RestMethod;
 import com.linkedin.restli.server.resources.CollectionResourceTemplate;
-import org.example.fortunes.Word;
+import org.ssb.wist.Word;
 
 @RestLiCollection(name = "word", namespace = "org.example.fortunes")
 public class WordResource extends CollectionResourceTemplate<String, Word> {

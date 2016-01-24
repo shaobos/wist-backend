@@ -6,7 +6,7 @@ import com.linkedin.restli.common.PatchRequest;
 import com.linkedin.restli.server.UpdateResponse;
 import com.linkedin.restli.server.annotations.RestLiCollection;
 import com.linkedin.restli.server.resources.CollectionResourceTemplate;
-import org.example.fortunes.WordsOfToday;
+import org.ssb.wist.WordsOfToday;
 import redis.clients.jedis.Jedis;
 
 import java.util.HashMap;
