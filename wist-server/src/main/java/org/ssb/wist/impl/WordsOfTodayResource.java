@@ -9,23 +9,47 @@ import com.linkedin.restli.server.resources.CollectionResourceTemplate;
 import org.ssb.wist.WordsOfToday;
 import redis.clients.jedis.Jedis;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
 @RestLiCollection(name = "wordsOfToday", namespace = "org.ssb.wist")
 public class WordsOfTodayResource extends CollectionResourceTemplate<Long, WordsOfToday> {
+  // TODO: convert this to a simple resource
+  boolean shouldWordBeReviewed(String reviewDateStr, Date today) {
+    SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+    Date reviewDate;
 
+    try {
+      reviewDate = simpleDateFormat.parse(reviewDateStr);
+      if (today.after(reviewDate)) {
+        return true;
+      }
+    } catch (ParseException e) {
+      e.printStackTrace();
+    }
 
-  public WordsOfToday get(Long key){
+    return false;
+  }
+
+  public WordsOfToday get(Long key) {
     Jedis jedis = new Jedis("localhost");
     Set<String> allKeys = jedis.keys("*");
     Map<String, String> response = new HashMap();
 
     for (String word : allKeys) {
       System.out.println("Word is " + word);
-      String values = jedis.hget(word, "note");
-      response.put(word, values);
+
+      String reviewDateStr = jedis.hget(word, "review_date");
+      Date today = new Date();
+      if (shouldWordBeReviewed(reviewDateStr, today)) {
+        System.out.println("Word " + " is considered today of word");
+        String values = jedis.hget(word, "note");
+        response.put(word, values);
+      }
     }
 
     return new WordsOfToday().setWordsOfToday(new StringMap(response));

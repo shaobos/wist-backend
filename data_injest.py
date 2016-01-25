@@ -14,13 +14,13 @@ with open('my-dictionary', 'r') as dictionary:
         split_results = match.split("\n", 1)
         word = split_results[0].strip()
         note = split_results[1]
-        print "Found word {0}".format(word)
-        print "Found note {0}".format(note)
         data = {
             "note": note,
-            "insert_date": datetime.date.today(),
+            "review_date": datetime.date.today(),
             "repetition": 0
         }
-        # TODO: do not insert if word is already in redis
-        r.hmset(word, data)
-
+        if r.hkeys(word):
+            print "The word '{0}' already exists. Do not modify it".format(word)
+        else:
+            print "Inserting word {'0'}".format(word)
+            r.hmset(word, data)
