@@ -12,6 +12,7 @@ import redis.clients.jedis.Jedis;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.TimeZone;
 
 @RestLiCollection(name = "word", namespace = "org.ssb.wist")
 public class WordResource extends CollectionResourceTemplate<String, Word> {
@@ -20,6 +21,7 @@ public class WordResource extends CollectionResourceTemplate<String, Word> {
     SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
     Calendar calendar = Calendar.getInstance();
     calendar.setTime(currentDate);
+    calendar.setTimeZone(TimeZone.getTimeZone("PST"));
     calendar.add(Calendar.DATE, days);
     return dateFormat.format(calendar.getTime());
   }
