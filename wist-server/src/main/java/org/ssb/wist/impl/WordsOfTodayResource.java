@@ -19,9 +19,14 @@ import java.util.Set;
 @RestLiCollection(name = "wordsOfToday", namespace = "org.ssb.wist")
 public class WordsOfTodayResource extends CollectionResourceTemplate<Long, WordsOfToday> {
   // TODO: convert this to a simple resource
-  boolean shouldWordBeReviewed(String reviewDateStr, Date today) {
+  boolean shouldWordBeReviewed(String reviewDateStr, Date today, int repetition) {
     SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
     Date reviewDate;
+
+    if (RepetitionInterval.intervals.size() == repetition) {
+      System.out.println("Word " + key + " exceeded maximum review times. No need to review again");
+      return false;
+    }
 
     try {
       reviewDate = simpleDateFormat.parse(reviewDateStr);
@@ -44,8 +49,9 @@ public class WordsOfTodayResource extends CollectionResourceTemplate<Long, Words
       System.out.println("Word is " + word);
 
       String reviewDateStr = jedis.hget(word, "review_date");
+      int repetition = Integer.parseInt(jedis.hget(word, "repetition"));
       Date today = new Date();
-      if (shouldWordBeReviewed(reviewDateStr, today)) {
+      if (shouldWordBeReviewed(reviewDateStr, today, repetition)) {
         System.out.println("Word " + " is considered today of word");
         String values = jedis.hget(word, "note");
         response.put(word, values);

@@ -42,6 +42,11 @@ public class WordResource extends CollectionResourceTemplate<String, Word> {
         return new UpdateResponse(HttpStatus.S_400_BAD_REQUEST);
       }
 
+      if (RepetitionInterval.intervals.size() == repetitionIndex) {
+        System.out.println("Word " + key + " exceeded maximum review times. It graduated!!");
+        return new UpdateResponse(HttpStatus.S_200_OK);
+      }
+
       // return the next interval given the index
       int nextInterval = RepetitionInterval.intervals.get(repetitionIndex);
       String nextReviewDateStr = addDays(todayDate, nextInterval);
