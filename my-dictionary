@@ -1,3 +1,26 @@
+** coalesce
+[,koə'lɛs]
+: come together and form one mass or whole
+
+- PCS and PCL run are now coalesced into one hudson job
+- Shouldn’t this be part of the JSTF MP?  It’s purpose is to coalesce JS testing utilities into one MP. 
+
+
+** innocuous
+[ɪ'nɒkjʊəs]
+: not harmful or offensive
+
+- Occasionally we would see failures to compile our Core Data schema. And other times the compiler would fail on a completely innocuous Obj-C source file. But not always
+- The secret to the Magic Trackpad's clicking ability is in those innocuous looking round rubber feet on the bottom
+- These are alarming but innocuous error messages are from a logging call that accidentally snuck in where it shouldn't have. This has been fixed and all you need to do is bump lipy-config-base.
+
+** demystify  
+[diː'mɪstɪfaɪ]
+: to make (something) clear and easy to understand : to explain(something) so that it no longer confuses or mystifies someone
+
+- In this series of blog posts, we will demystify our efforts, and talk about implementation details.
+- While one of the main design goals of IC is to keep it as transparent to developers as possible, demystifying it hopefully helps improve the sentiments towards IC and ease the process of cleaning up IC related code in various services. The main purposes of this article is to explain the purpose of IC, the high level idea of it, the existing problems, and the way to fix these problems.
+
 ** subdued
 : lacking in vitality, intensity or strength
 
