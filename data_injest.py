@@ -19,8 +19,10 @@ with open('my-dictionary', 'r') as dictionary:
             "review_date": datetime.date.today(),
             "repetition": 0
         }
+
         if r.hkeys(word):
-            print "The word '{0}' already exists. Do not modify it".format(word)
+            print "The word '{0}' already exists. only update notes".format(word)
+            r.hset(word, "note", note)
         else:
-            print "Inserting word {'0'}".format(word)
+            print "Inserting word '{0}'".format(word)
             r.hmset(word, data)

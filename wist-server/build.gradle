@@ -24,3 +24,4 @@ task JettyRunWar(type: JavaExec) {
   args = [war.archivePath]
   classpath configurations.jetty8
 }
+

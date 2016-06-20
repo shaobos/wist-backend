@@ -24,7 +24,7 @@ public class WordsOfTodayResource extends CollectionResourceTemplate<Long, Words
     Date reviewDate;
 
     if (RepetitionInterval.intervals.size() == repetition) {
-      System.out.println("Word " + key + " exceeded maximum review times. No need to review again");
+      System.out.println("Word exceeded maximum review times. No need to review again");
       return false;
     }
 
