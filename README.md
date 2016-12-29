@@ -15,3 +15,5 @@ Once running, you can send a GET request to the server with:
 
 `curl http://localhost:8080/wist-server/word/voracious`
 
+Command to generate gradle wrapper:
+`gradle wrapper --gradle-version 3.2.1`
