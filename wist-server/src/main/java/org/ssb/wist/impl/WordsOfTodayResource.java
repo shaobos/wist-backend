@@ -18,6 +18,9 @@ import java.util.Set;
 
 @RestLiCollection(name = "wordsOfToday", namespace = "org.ssb.wist")
 public class WordsOfTodayResource extends CollectionResourceTemplate<Long, WordsOfToday> {
+
+  private Jedis jedis = new Jedis("localhost");
+
   // TODO: convert this to a simple resource
   boolean shouldWordBeReviewed(String reviewDateStr, Date today, int repetition) {
     SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
@@ -41,7 +44,6 @@ public class WordsOfTodayResource extends CollectionResourceTemplate<Long, Words
   }
 
   public WordsOfToday get(Long key) {
-    Jedis jedis = new Jedis("localhost");
     Set<String> allKeys = jedis.keys("*");
     Map<String, String> response = new HashMap();
 

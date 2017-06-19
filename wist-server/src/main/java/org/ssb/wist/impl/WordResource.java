@@ -6,18 +6,19 @@ import com.linkedin.restli.server.UpdateResponse;
 import com.linkedin.restli.server.annotations.RestLiCollection;
 import com.linkedin.restli.server.annotations.RestMethod;
 import com.linkedin.restli.server.resources.CollectionResourceTemplate;
-import org.ssb.wist.Word;
-import redis.clients.jedis.Jedis;
-
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.TimeZone;
+import org.ssb.wist.Word;
+import redis.clients.jedis.Jedis;
 
 @RestLiCollection(name = "word", namespace = "org.ssb.wist")
 public class WordResource extends CollectionResourceTemplate<String, Word> {
 
-  public String addDays(Date currentDate, int days) {
+  private Jedis jedis = new Jedis("localhost");
+
+  private String addDays(Date currentDate, int days) {
     SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
     Calendar calendar = Calendar.getInstance();
     calendar.setTime(currentDate);
@@ -29,7 +30,6 @@ public class WordResource extends CollectionResourceTemplate<String, Word> {
   @RestMethod.Update
   public UpdateResponse update(String key, Word entity) {
     System.out.println(key);
-    Jedis jedis = new Jedis("localhost");
     if (key != null) {
       int repetitionIndex = Integer.parseInt(jedis.hget(key, "repetition"));
       String reviewDateStr = jedis.hget(key, "review_date");
@@ -63,8 +63,10 @@ public class WordResource extends CollectionResourceTemplate<String, Word> {
   }
 
   @Override
-  public Word get(String key) {
-    System.out.println("Get me. Read me. Analyze me");
-    return new Word();
+  public Word get(String word) {
+    String note = jedis.hget(word, "note");
+    String repetition = jedis.hget(word, "repetition");
+
+    return new Word().setReviewCount(Integer.valueOf(repetition)).setWordName(word).setWordDef(note);
   }
 }

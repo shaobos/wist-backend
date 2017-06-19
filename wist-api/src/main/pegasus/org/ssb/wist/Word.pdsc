@@ -3,5 +3,21 @@
   "name": "Word",
   "namespace": "org.ssb.wist",
   "doc": "Word data schema",
-  "fields": []
+  "fields": [
+    {
+      "name": "wordName",
+      "type": "string",
+      "doc": "word name"
+    },
+    {
+      "name": "wordDef",
+      "type": "string",
+      "doc": "word definition"
+    },
+    {
+      "name": "reviewCount",
+      "type": "long",
+      "doc": "how many times word has been reviewed"
+    }
+  ]
 }
