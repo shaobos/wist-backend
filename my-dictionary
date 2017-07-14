@@ -1,3 +1,31 @@
+** inadvertent
+[,inəd'və:tənt]
+: not intended or planned
+
+These bugs can be known product or feature issues: high latency because we haven’t dedicated enough time and attention to memory management, or algorithm tuning and optimization, or they can be security holes that have inadvertently made their way into our products.
+This seems to have been caused by an (inadvertently) global YCB change made by another track and seems to be being addressed
+One of the first problems we encountered when trying to execute Ember in node was top-level feature detection. Because Ember previously assumed it was running inside a browser, it inadvertently relied on the existence of basic DOM APIs, like window, the document and navigator.
+
+** inferior
+[ɪn’fɪərɪə]
+: lower in rank, status, or quality
+
+- The Chinese no longer see Chinese brands as inferior to multinationals
+- The hiring was too slow, the engineering department was not good enough, and the software was inferior to Amazon’s.
+
+** divulge
+: make known (private or sensitive information) 泄露
+
+- But they show that Snowden predicted how the documents he divulged would be received by Washington officialdom: "I think the government's going to launch an investigation. I think they're going to say I committed grave crimes, [that] I violated the Espionage Act. They're going to say I aided our enemies
+- But in all those conversations, the company had clearly withheld a crucial detail that Bezos divulged seventeen minutes into the forty-minute launch speech.
+
+** foray
+['fɒreɪ]
+: an attempt to become involved in a new activity or sphere: my first foray intojournalism.
+
+- Apple last month lifted the lid on ARKit, the company’s first foray into this field. The tool lets developers build applications for iPhones and iPads.
+- The Amazon jewelry executives decided on an approach similar to the one the company had recently used for its cautious first foray into apparel.
+
 ** eviscerate
 [i'visəreit]
 : deprive (something) of its essential content
@@ -28,6 +56,7 @@
 - This is a poor argument. I don't want to have to turn off the display of images; my team shares screenshots of our current development and having to open every collapsed image is a pain. But I was forced to turn off images because giphy spam was so pervasive.
 - Last month, China formally charged a former railways minister, Liu Zhijun, with corruption and abuse of power, setting up the first test of newly installed President Xi Jinping's resolve to crack down on pervasive graft.
 - Because modern browsers have pervasive scripting support, it's possible for malicious parties to cause them to make requests that can modify a users' data without their knowledge.
+- the pervasiveness of optimism among programmers deserves more than a flip analysis.
 
 ** convoluted
 ['kɔnvə,lu:tid]
