@@ -1,10 +1,24 @@
+** forgo
+: to give up the use or enjoyment of (something)
+
+- Of course I am not advocating doing something stupid, or writing bad code, but don’t over-engineer or solve problems before you have them. Here are some examples: forgoing the deployment of a multi-node Cassandra cluster and storing the initial data in a single database (with backup) that is fast and easy to make arbitrary queries against
+- It’s common sense that having an incriminating social media presence can damage your career prospects. But it might be more surprising to hear that forgoing an online presence can also hurt your chances of getting a new gig.
+- The great institutions of our day are built by these creatures who forgo year's of human evolution in the name of meritocracy
+
+** extricate 
+['ekstrikeit]
+: free (someone or something) from a constraint or difficulty
+
+- Lovefilm executives had several meetings with attorneys to try to find a way to extricate themselves from the situation.
+- firefighters used the Jaws of Life to extricate a man who was trapped in a vintage Porsche after a crash in Costa Mesa on Thursday.
+
 ** inadvertent
 [,inəd'və:tənt]
 : not intended or planned
 
-These bugs can be known product or feature issues: high latency because we haven’t dedicated enough time and attention to memory management, or algorithm tuning and optimization, or they can be security holes that have inadvertently made their way into our products.
-This seems to have been caused by an (inadvertently) global YCB change made by another track and seems to be being addressed
-One of the first problems we encountered when trying to execute Ember in node was top-level feature detection. Because Ember previously assumed it was running inside a browser, it inadvertently relied on the existence of basic DOM APIs, like window, the document and navigator.
+- These bugs can be known product or feature issues: high latency because we haven’t dedicated enough time and attention to memory management, or algorithm tuning and optimization, or they can be security holes that have inadvertently made their way into our products.
+- This seems to have been caused by an (inadvertently) global YCB change made by another track and seems to be being addressed
+- One of the first problems we encountered when trying to execute Ember in node was top-level feature detection. Because Ember previously assumed it was running inside a browser, it inadvertently relied on the existence of basic DOM APIs, like window, the document and navigator.
 
 ** inferior
 [ɪn’fɪərɪə]
