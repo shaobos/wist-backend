@@ -1,3 +1,66 @@
+** riveting
+: very exiting or interesting
+
+- movie is riveting
+- Good news, team.... I have completed the Standards of Business Conduct training. These Microsoft trainings are riveting.
+- I'm reading _Unix and Linux System Administrator's Handbook_. It's very riveting.
+
+** indispensable
+[,indis’pensəbl]
+:absolutely necessary
+
+- `play` will work for the time being while we still have sbt, but it will go away once we switch to gradle.. are there use cases where you find `play` to be almost indispensable?
+- we make Yahoo! as indispensable on the mobile platform as it has been historically on the PC platform, and that we develop ways to monetize mobile usage
+- Programming skills are indispensable in today’s world, not just for computer science students, but also for anyone
+- Volunteer to organize a party to exercise your event-planning skills. They may seem like small things, but the more you have to offer, the more indispensable you become.
+
+** gusto
+: great enjoyment, energy and enthusiasm
+
+- The IAF's Anti Naxal Task Force celebrated 84th anniversary of the Indian Air Force with gusto and enthusiasm on Saturday at its detachments in Raipur, Jagdalpur and Ranchi in Chhattisgarh.
+- while I appreciate your gusto, I think it's a bit fatalistic to say everything's going to waste if we miss out on a few lighting aspects
+
+** tumultuous 
+[tju:'mʌltjuəs]
+: loud, excited, and emotional
+: involving a lot of violence, confusion, or disorder
+
+- The tumultuous Great Red Spot is fading from Juno’s view while the dynamic bands of the southern region of Jupiter come into focus.
+- DeMarcus Cousins is constantly being asked if he wants to remain a member of the Sacramento Kings. It’s a reasonable question given his often tumultuous relationship with the franchise, but I’m sure he gets damn tired of hearing it.
+- Presenting her husband as softer and gentler than the man known by the public, a heartfelt Melania Trump introduced herself Monday to a nation that has often seen but rarely heard from her through months of the tumultuous 2016 White House campaign.
+
+** copious
+: very large in amount or number
+
+- All the reporters took copious notes, except one. S simply watched and listened.
+- Deep and Szczepan, would be awesome if we can get a jump on this. In your copious spare time("copious spare time" indicatesThe amount of time left in a day that is completely booked, which is to say, none. )
+
+** unwieldy
+[,ʌn'wi:ldi]
+: difficult to handle, control or deal with because of being large, heavy or complex
+
+- Beloved Internet services with dedicated communities, dashed upon the rocks of unwieldy companies overrun with vice presidents.
+- We've tried the JSON to markup pattern for things like action buttons and it does cause problems and quickly gets unwieldy.
+- When we are regularly working with fast growing data sets of many TBs comprising billions of objects, it is unwieldy to manage billions of ap-proximately KB-sized files even when the file system could support it.
+
+** hamper
+: slow the movement, progress, or action of (someone or something)
+
+synonyms: hinder, impede
+
+- Those were a drain on resources, human and financial. Even though many of the resources came from Yahoo, they were debited against Flickr. This created an untenable cycle that actively hampered innovation.
+- voy-web dev environment was unstable for most part of yesterday which hampered productivity
+- This slowness was also hampering our ability to re-create the dump when we needed to rebuild the base index.
+
+** esoteric 
+[ˌesəˈterik]
+adj. intended for or likely to be understood by only a small number of people with a specialized knowledge or interest.
+
+- But before delving into any such esoteric secrets, there was some basic groundwork to be laid.
+- There was a smidge that I didn't see covered but it's mostly a little more esoteric things like ember data custom transforms and custom adapters.
+- Strangely the answer to that appears to be anything and everything. I am told that closures enable ECMAScript to emulate anything, so the limitation is the ability to conceive and implement the emulation. That is a bit esoteric and it is probably better to start with something a little more practical.
+
+
 ** colloquial 
 : (of language) used in ordinary or familiar conversation; not formal or literary
 
@@ -85,6 +148,7 @@
 
 - It struck Goldstein’s nose and bounced off; the voice continued inexorably.
 - By early 2009, the home-video market was inexorably tilting toward streaming movies online and away from sending discs in the mail.
+- the German psychologist Hermann Ebbinghaus set out to quantify this inexorable process of forgetting.
 
 ** debacle
 [dei'bɑ:kl]
