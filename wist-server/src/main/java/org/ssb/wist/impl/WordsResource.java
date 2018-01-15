@@ -23,12 +23,12 @@ import java.util.TimeZone;
 @RestLiCollection(name = "words", namespace = "org.ssb.wist")
 public class WordsResource extends CollectionResourceTemplate<String, Word> {
 
-  private Jedis jedis = new Jedis("localhost");
+  private Jedis jedis = RedisStorage.createInstance();
 
   @RestMethod.Get
   public Word get(String word) {
-    String note = jedis.hget(word, "note");
-    String repetition = jedis.hget(word, "repetition");
+    String note = jedis.hget(word, RedisMapper.NOTE);
+    String repetition = jedis.hget(word, RedisMapper.REPETITION);
 
     return new Word().setReviewCount(Integer.valueOf(repetition)).setWordName(word).setWordDef(note);
   }
@@ -37,8 +37,8 @@ public class WordsResource extends CollectionResourceTemplate<String, Word> {
   public UpdateResponse update(String key, Word entity) {
     System.out.println(key);
     if (key != null) {
-      int repetitionIndex = Integer.parseInt(jedis.hget(key, "repetition"));
-      String reviewDateStr = jedis.hget(key, "review_date");
+      int repetitionIndex = Integer.parseInt(jedis.hget(key, RedisMapper.REPETITION));
+      String reviewDateStr = jedis.hget(key, RedisMapper.REVIEW_DATE);
       Date todayDate = new Date();
 
       if (DateUtils.stringToDate(reviewDateStr).after(todayDate)) {
@@ -56,8 +56,8 @@ public class WordsResource extends CollectionResourceTemplate<String, Word> {
       int nextInterval = RepetitionInterval.intervals.get(repetitionIndex);
       String nextReviewDateStr = addDays(todayDate, nextInterval);
 
-      jedis.hset(key, "repetition", Integer.toString(repetitionIndex+1));
-      jedis.hset(key, "review_date", nextReviewDateStr);
+      jedis.hset(key, RedisMapper.REPETITION, Integer.toString(repetitionIndex+1));
+      jedis.hset(key, RedisMapper.REVIEW_DATE, nextReviewDateStr);
     }
     return new UpdateResponse(HttpStatus.S_200_OK);
   }
@@ -69,13 +69,13 @@ public class WordsResource extends CollectionResourceTemplate<String, Word> {
 
     for (String wordKey : allKeys) {
 
-      String reviewDateStr = jedis.hget(wordKey, "review_date");
-      int repetition = Integer.parseInt(jedis.hget(wordKey, "repetition"));
+      String reviewDateStr = jedis.hget(wordKey, RedisMapper.REVIEW_DATE);
+      int repetition = Integer.parseInt(jedis.hget(wordKey, RedisMapper.REPETITION));
       Date today = new Date();
 
       if (shouldWordBeReviewed(reviewDateStr, today, repetition)) {
         Word word = new Word().setWordName(wordKey);
-        String note = jedis.hget(wordKey, "note");
+        String note = jedis.hget(wordKey, RedisMapper.NOTE);
         word.setWordDef(note);
         response.add(word);
       }
@@ -92,7 +92,7 @@ public class WordsResource extends CollectionResourceTemplate<String, Word> {
 
     for (String wordKey : allKeys) {
       Word word = new Word().setWordName(wordKey);
-      String repetition = jedis.hget(wordKey, "repetition");
+      String repetition = jedis.hget(wordKey, RedisMapper.REPETITION);
       word.setReviewCount(Integer.valueOf(repetition));
       response.add(word);
     }
