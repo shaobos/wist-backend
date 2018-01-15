@@ -1,11 +1,11 @@
 Welcome to Rest.li
 ==================
 
-This is a rest.li application using gradle as the build system.
+This is a rest.li application using Gradle as the build system.
 
 #Setup
 ##Build
-To build for the first time, use gradle 1.8 or greater and run:
+To build for the first time, use Gradle 1.8 or greater and run:
 
 ```
 gradle build :wist-server:JettyRunWar
@@ -24,5 +24,5 @@ Command to generate gradle wrapper:
 */1 * * * * cd /home/ssb/wist-backend && git pull && python /home/ssb/wist-backend/data_injest.py
 ```
 
-###Redis
-Check out Redis and run `./redis-server` so that it hosts a server at port `6379`
+##Redis
+Check out Redis and run `./redis/src/redis-server` so that it hosts a server at port `6379`

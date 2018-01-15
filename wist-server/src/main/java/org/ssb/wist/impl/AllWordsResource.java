@@ -11,6 +11,7 @@ import java.util.Map;
 import java.util.Set;
 
 @RestLiSimpleResource(name = "allWords", namespace = "org.ssb.wist")
+@Deprecated
 public class AllWordsResource extends SimpleResourceTemplate<AllWords> {
 
   @Override

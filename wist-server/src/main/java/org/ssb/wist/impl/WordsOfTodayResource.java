@@ -17,6 +17,7 @@ import java.util.Map;
 import java.util.Set;
 
 @RestLiCollection(name = "wordsOfToday", namespace = "org.ssb.wist")
+@Deprecated
 public class WordsOfTodayResource extends CollectionResourceTemplate<Long, WordsOfToday> {
 
   private Jedis jedis = new Jedis("localhost");
@@ -43,29 +44,30 @@ public class WordsOfTodayResource extends CollectionResourceTemplate<Long, Words
     return false;
   }
 
+  /**
+   *
+   * @param key
+   * @return
+   */
   public WordsOfToday get(Long key) {
     Set<String> allKeys = jedis.keys("*");
-    Map<String, String> response = new HashMap();
+    Map<String, String> wordsOfTodayMap = new HashMap();
 
     for (String word : allKeys) {
-      System.out.println("Word is " + word);
-
       String reviewDateStr = jedis.hget(word, "review_date");
       int repetition = Integer.parseInt(jedis.hget(word, "repetition"));
       Date today = new Date();
       if (shouldWordBeReviewed(reviewDateStr, today, repetition)) {
-        System.out.println("Word " + " is considered today of word");
         String values = jedis.hget(word, "note");
-        response.put(word, values);
+        wordsOfTodayMap.put(word, values);
       }
     }
 
-    return new WordsOfToday().setWordsOfToday(new StringMap(response));
+    return new WordsOfToday().setWordsOfToday(new StringMap(wordsOfTodayMap));
   }
 
   @Override
   public UpdateResponse update(Long key, WordsOfToday entity) {
-    System.out.println("update, key, entity");
     return new UpdateResponse(HttpStatus.S_202_ACCEPTED);
   }
 

@@ -4,8 +4,8 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class DateUtils {
-  public static Date stringToDate(String input) {
+class DateUtils {
+  static Date stringToDate(String input) {
     SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
     try {
       return dateFormat.parse(input);
