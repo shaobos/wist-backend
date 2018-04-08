@@ -1,3 +1,9 @@
+** boon
+: a thing that is helpful or beneficial
+
+- Snapshot isolation is a boon for long-running, read-only queries such as backups and analytics. 
+- Ember's powerful dependency injection ("DI") system has been a boon for managing application state, supporting the transition from globals to modules, and ensuring tests are fast and robust.
+
 ** distill
 : extract the essential elements
 : to take the most important parts of something and put them in a different and usually improved form
